@@ -120,6 +120,7 @@ Modern platforms generate thousands of log messages daily. Manually inspecting t
 
 This project demonstrates a scalable approach to log classification, enabling proactive platform monitoring. Future enhancements may include:
 
+- Infuse more Log data with more unique and random cases, to identify the effectiveness of the models
 - Real-time log ingestion and classification
 - Integration with alerting systems
 - Deployment as a microservice for production use
