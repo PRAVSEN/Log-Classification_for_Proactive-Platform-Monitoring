@@ -140,7 +140,6 @@ All models achieved near-perfect scores across all metrics, indicating extremely
 
 - The feature engineering pipeline (TF-IDF, SVD, metadata fusion) is highly effective.
 - The classification task may be relatively easy given the current dataset.
-- There is a possibility of data leakage or overfitting if preprocessing steps were not properly isolated between training and test sets.
 
 ---
 
