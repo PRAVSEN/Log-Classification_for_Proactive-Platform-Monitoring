@@ -52,13 +52,13 @@ Modern platforms generate thousands of log messages daily. Manually inspecting t
 
 ---
 
-## 🧠 Feature Engineering & Clustering
+## 🧠 Clustering & Embedding - Unsupervised Learning
 
 ### 📐 TF-IDF Embeddings
 - Applied TF-IDF vectorization to extract semantic patterns.
 - 2D projection shows consistent clustering between train and test sets.
 
-### 🔍 Clustering Techniques
+### 🔍 Clustering Techniques - Pattern & Anomaly Detection
 - Applied DBSCAN and KMeans to reduced embeddings.
 - DBScan clustering did perform well on identifying Anomaly Detections when applied on larger datasets
 - **Key Takeaway**: Both methods generalize well across splits, capturing consistent structure.
@@ -98,7 +98,7 @@ Modern platforms generate thousands of log messages daily. Manually inspecting t
 - **Dimensionality Reduction**: Truncated SVD (3 components)
 - **Scaling**: StandardScaler applied to SVD components only
 
-### 3. Modeling
+### 3. Modeling - Supervised Learning
 - Train/test split (80/20) with stratified sampling
 - Combined scaled SVD + unscaled metadata
 - Trained classifiers with `GridSearchCV`:
@@ -142,8 +142,8 @@ All models achieved near-perfect scores across all metrics, indicating extremely
 - The feature engineering pipeline (TF-IDF, SVD, metadata fusion) is highly effective.
 - The classification task may be relatively easy given the current dataset.
 - Adding more logs mainly **"info"** category made the dataset more **imbalanced** and the precision/recalls scores went down to 83%
-  - Random Forest could handle class imbalances when combined with class weighting
-  - Gradient Boosting models that handle Class Imbalances applying hyperparameter tuning using scale_pos_weight on minority subsets were identified but are not documented here
+  - Random Forest was able to handle class imbalances when combined with class weighting parameter
+  - Gradient Boosting models that handle Class Imbalances applying hyperparameter tuning using scale_pos_weight on minority subsets were identified
 
 ---
 
