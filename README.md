@@ -116,6 +116,66 @@ Modern platforms generate thousands of log messages daily. Manually inspecting t
 
 ---
 
+# 📊 Baseline Model Evaluation
+
+This section summarizes the performance of five machine learning classifiers trained to distinguish between `error` and `info` log messages. The evaluation was conducted on a held-out test set using precision, recall, and F1-score as key metrics.
+
+---
+
+## ✅ Model Performance Summary
+
+| Model               | Precision | Recall | F1-Score | Support |
+|--------------------|-----------|--------|----------|---------|
+| Logistic Regression| 0.9993    | 0.9993 | 0.9993   | 5795    |
+| K-Nearest Neighbors| 0.9998    | 0.9998 | 0.9998   | 5795    |
+| Decision Tree      | 0.9991    | 0.9991 | 0.9991   | 5795    |
+| Random Forest      | 0.9995    | 0.9995 | 0.9995   | 5795    |
+| Support Vector Machine| 0.9995 | 0.9995 | 0.9995   | 5795    |
+
+---
+
+## 🧠 Key Takeaway
+
+All models achieved near-perfect scores across all metrics, indicating extremely strong performance on the test set. This suggests that:
+
+- The feature engineering pipeline (TF-IDF, SVD, metadata fusion) is highly effective.
+- The classification task may be relatively easy given the current dataset.
+- There is a possibility of data leakage or overfitting if preprocessing steps were not properly isolated between training and test sets.
+
+---
+
+## ⚠️ Recommendation
+
+To ensure these results generalize to real-world logs:
+
+- Validate with cross-validation or a separate holdout set.
+- Test on unseen or noisy logs from production environments.
+- Monitor for alert fatigue if models over-predict `error`.
+
+
+## Confusion Matrix & Metric Analysis
+
+| Metric        | Description                                                                 |
+|---------------|-----------------------------------------------------------------------------|
+| **Accuracy**  | Overall correctness of predictions                                          |
+| **Precision** | % of predicted `error` logs that are truly errors (controls false positives)|
+| **Recall**    | % of actual `error` logs correctly identified (controls false negatives)    |
+| **F1-score**  | Harmonic mean of precision and recall                                       |
+
+### Why FP and FN Matter
+
+- **False Positives (FP)**: Info logs misclassified as errors  
+  → May cause alert fatigue or unnecessary investigations
+
+- **False Negatives (FN)**: Error logs misclassified as info  
+  → **Critical risk**: Engineers miss real issues, leading to downtime or failures
+
+### Priority: **Recall > Precision > Accuracy**
+In this use case, **recall is most important**. Missing an actual error (FN) is far more dangerous than over-alerting (FP). The system must prioritize catching every potential issue—even if it means a few false alarms.
+
+---
+
+
 ## 🏁 Other Findings & Future Enhancements
 
 This project demonstrates a scalable approach to log classification, enabling proactive platform monitoring. Future enhancements may include:
