@@ -60,6 +60,7 @@ Modern platforms generate thousands of log messages daily. Manually inspecting t
 
 ### 🔍 Clustering Techniques
 - Applied DBSCAN and KMeans to reduced embeddings.
+- DBScan clustering did perform well on identifying Anomaly Detections when applied on larger datasets
 - **Key Takeaway**: Both methods generalize well across splits, capturing consistent structure.
 
 ---
@@ -140,6 +141,9 @@ All models achieved near-perfect scores across all metrics, indicating extremely
 
 - The feature engineering pipeline (TF-IDF, SVD, metadata fusion) is highly effective.
 - The classification task may be relatively easy given the current dataset.
+- Adding more logs mainly **"info"** category made the dataset more **imbalanced** and the precision/recalls scores went down to 83%
+  - Random Forest could handle class imbalances when combined with class weighting
+  - Gradient Boosting models that handle Class Imbalances applying hyperparameter tuning using scale_pos_weight on minority subsets were identified but are not documented here
 
 ---
 
@@ -174,17 +178,10 @@ In this use case, **recall is most important**. Missing an actual error (FN) is 
 
 ---
 
-
-## 🏁 Other Findings & Future Enhancements
+## 🏁 Future Enhancements
 
 This project demonstrates a scalable approach to log classification, enabling proactive platform monitoring. Future enhancements may include:
 
-### 1. Findings:
-- Adding more logs mainly info category made the dataset more imbalanced and the precision/recalls scores went down to 83%
-- Identify models that handle Class Imbalances applying hyperparameter tuning using weighted class on minority subsets
-- DBScan clustering did perform well on identifying Anomaly Detections when datasets get more complicated
-
-### 2. Future Enhancements
 - Infuse more Log data with more unique and random cases, to identify the effectiveness of the models
 - Real-time log ingestion and classification
 - Integration with alerting systems
