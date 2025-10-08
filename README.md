@@ -116,10 +116,16 @@ Modern platforms generate thousands of log messages daily. Manually inspecting t
 
 ---
 
-## 🏁 Final Thoughts
+## 🏁 Other Findings & Future Enhancements
 
 This project demonstrates a scalable approach to log classification, enabling proactive platform monitoring. Future enhancements may include:
 
+### 1. Findings:
+- Adding more logs mainly info category made the dataset more imbalanced and the precision/recalls scores went down to 83%
+- Identify models that handle Class Imbalances applying hyperparameter tuning using weighted class on minority subsets
+- DBScan clustering did perform well on identifying Anomaly Detections when datasets get more complicated
+
+### 2. Future Enhancements
 - Infuse more Log data with more unique and random cases, to identify the effectiveness of the models
 - Real-time log ingestion and classification
 - Integration with alerting systems
