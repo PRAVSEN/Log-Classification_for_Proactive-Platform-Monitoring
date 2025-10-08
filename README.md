@@ -183,6 +183,7 @@ In this use case, **recall is most important**. Missing an actual error (FN) is 
 This project demonstrates a scalable approach to log classification, enabling proactive platform monitoring. Future enhancements may include:
 
 - Infuse more Log data with more unique and random cases, to identify the effectiveness of the models
+- Infuse random error data to ensure the models identify the errors that are anomalies and not being trained upon
 - Real-time log ingestion and classification
 - Integration with alerting systems
 - Deployment as a microservice for production use
