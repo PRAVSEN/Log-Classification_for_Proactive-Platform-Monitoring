@@ -86,6 +86,27 @@ To better understand the structure and semantics of system log messages, this pr
 
 ## ⚖️ Scaling & KDE Visualization
 
+## ⚖️ Scaling & KDE Visualization – Data Normalization & Distribution Analysis
+
+Scaling and Kernel Density Estimation (KDE) visualization are essential steps in understanding the distribution of log data and preparing it for machine learning models.
+
+### 🎯 Objective
+
+- **Normalize Feature Ranges**  
+  Apply scaling techniques (e.g., Min-Max, StandardScaler) to ensure consistent feature ranges, which improves model convergence and performance.
+
+- **Reveal Data Distribution**  
+  Use KDE plots to visualize the probability density of numerical features, helping identify skewness, multimodal patterns, and outliers.
+
+- **Support Feature Selection**  
+  KDE visualizations highlight which features have meaningful variation and which may be redundant or noisy.
+
+- **Enhance Clustering & Classification**  
+  Scaled and well-understood features lead to more accurate clustering and classification results by reducing bias and improving separation.
+
+- **Detect Anomalies**  
+  KDE plots can expose unusual spikes or dips in feature distributions that may indicate system anomalies or logging irregularities.
+
 ### ✅ Scaling Best Practices
 - Label encoding applied only to target variable
 - Train-test split performed before scaling
