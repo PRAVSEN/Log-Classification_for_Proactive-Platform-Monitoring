@@ -122,7 +122,43 @@ Scaling and Kernel Density Estimation (KDE) visualization are essential steps in
 
 ---
 
-## 🔧 Pipeline Summary
+## 🤖 Modeling & Hyperparameter Tuning – Supervised Learning Pipeline
+
+To accurately classify system log messages into categories such as `error` and `info`, this project employs a supervised learning approach using multiple classification algorithms. Hyperparameter tuning is performed to optimize model performance.
+
+### 🎯 Objective
+
+- **Train Multiple Classifiers**  
+  Evaluate a diverse set of machine learning models to determine which algorithm best captures the patterns in log data.
+
+- **Optimize Model Performance**  
+  Use `GridSearchCV` to systematically explore combinations of hyperparameters and select the best configuration for each model.
+
+- **Improve Generalization**  
+  Prevent overfitting and enhance model robustness by tuning parameters like regularization strength, tree depth, number of neighbors, and kernel type.
+
+- **Benchmark Algorithms**  
+  Compare performance metrics (e.g., accuracy, precision, recall, F1-score) across models to identify the most effective classifier for log categorization.
+
+- **Support Real-Time Alerting**  
+  Deploy the best-performing model to proactively detect and alert engineers about critical system events.
+
+### 🧪 Models Trained with GridSearchCV
+
+- **Logistic Regression**  
+  A linear model suitable for binary classification with interpretable coefficients.
+
+- **K-Nearest Neighbors (KNN)**  
+  A non-parametric model that classifies based on proximity to labeled examples.
+
+- **Decision Tree**  
+  A tree-based model that splits data based on feature thresholds for interpretability.
+
+- **Random Forest**  
+  An ensemble of decision trees that improves accuracy and reduces variance.
+
+- **Support Vector Machine (Linear Kernel)**  
+  A margin-based classifier effective for high-dimensional data.
 
 ### 1. Data Preparation
 - Loaded logs from `Log-Classification_Capstone_Final.csv`
