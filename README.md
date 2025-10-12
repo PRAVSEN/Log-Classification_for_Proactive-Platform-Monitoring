@@ -15,6 +15,9 @@ Modern platforms generate thousands of log messages daily. Manually inspecting t
 ## 📊 Exploratory Data Analysis (EDA)
 
 ### 📁 Dataset Overview
+
+The dataset comprises log entries collected from AWS EKS (Elastic Kubernetes Service) across various services and platform components. These logs are continuously generated in real time, reflecting system activity and usage patterns. For this project, a representative subset of logs was extracted over a defined time window to serve as the basis for analysis. The primary objective is to proactively identify error messages that warrant immediate attention and to detect anomalies or irregularities that may indicate underlying system issues requiring intervention.
+
 - **Rows**: 28,971
 - **Columns**: 4
 - **Fields**:
