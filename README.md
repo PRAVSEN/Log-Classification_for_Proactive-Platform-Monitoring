@@ -84,8 +84,6 @@ To better understand the structure and semantics of system log messages, this pr
 
 ---
 
-## ⚖️ Scaling & KDE Visualization
-
 ## ⚖️ Scaling & KDE Visualization – Data Normalization & Distribution Analysis
 
 Scaling and Kernel Density Estimation (KDE) visualization are essential steps in understanding the distribution of log data and preparing it for machine learning models.
