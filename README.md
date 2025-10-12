@@ -57,6 +57,22 @@ The dataset comprises log entries collected from AWS EKS (Elastic Kubernetes Ser
 
 ## 🧠 Clustering & Embedding - Unsupervised Learning
 
+To better understand the structure and semantics of system log messages, this project incorporates unsupervised learning techniques such as **clustering** and **embedding**.
+
+### 🎯 Objective
+
+- **Discover Hidden Patterns**  
+  Group similar log messages to uncover recurring themes, potential issues, or unexpected anomalies without relying on labeled data.
+
+- **Dimensionality Reduction & Visualization**  
+  Use embedding techniques (e.g., TF-IDF, Word2Vec, or transformer-based models) to convert raw text into numerical vectors for easier analysis and visualization.
+
+- **Anomaly Detection**  
+  Identify outlier clusters that may represent rare or abnormal log entries—potential indicators of system faults or security concerns.
+
+- **Feature Engineering for Classification**  
+  Generate meaningful vector representations of log messages to serve as input features for downstream supervised classification models.
+
 ### 📐 TF-IDF Embeddings
 - Applied TF-IDF vectorization to extract semantic patterns.
 - 2D projection shows consistent clustering between train and test sets.
